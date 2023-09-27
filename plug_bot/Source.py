@@ -4,26 +4,26 @@ from pyrogram.types import (InlineQueryResultArticle, InputTextMessageContent,
 from config import *
 import asyncio
 
-@bot.on_inline_query(filters.regex("^سورس$") )
+@bot.on_inline_query(filters.regex("^سەرچاوە$") )
 async def answer(client, inline_query):
     reply_markup = InlineKeyboardMarkup(
             [[
-             InlineKeyboardButton("✅  قناه السورس  ",url="https://t.me/H_8HC"),
+             InlineKeyboardButton("⚡️ کەناڵی سەرچاوە ⚡️",url="https://t.me/MGIMT"),
              ],
              [
-             InlineKeyboardButton("☑️ لتنصيب حسابك   ",url="https://t.me/C_A_R_bot"),
+             InlineKeyboardButton("⚡️ بۆ بەژداربوون ⚡️",url="https://t.me/IQ7amo"),
              ]]
              )
     await inline_query.answer(
         results=[
             InlineQueryResultArticle(
-                title="سورس البوت",
+                title="𝗦𝗢𝗨𝗥𝗖𝞝 𝙄𝙌 - سەرچاوەی زیرەك",
                 input_message_content=InputTextMessageContent(
-                    "╭───── • 𖥔 • ─────╮\n [𖥔 𝑺𝑶𝑼𝑹𝑪𝑬 𝐂𝐀𝐄𝐒𝐀𝐑 ⚡️](https://t.me/H_8HC)\n[𖥔 𝑻𝑾𝑨𝑺𝑶𝑳 𝐂𝐀𝐄𝐒𝐀𝐑 ⚡️](https://t.me/sorescaser)\n[𖥔 𝑫𝑨𝑫 𝐂𝐀𝐄𝐒𝐀𝐑 ⚡️](https://t.me/c_a_s_e_r_h)\n╰───── • 𖥔 • ─────╯\n⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼"
+                    "╭──── • ◈ • ────╮\n么 [⧉• 𝙎𝙊𝙐𝙍𝘾𝞝 𝙄𝙌 ⚡️](https://t.me/MGIMT)\n么 [𝘿𝞝𝙑𝙇𝙊𝙋𝞝𝙍 ⚡️](https://t.me/IQ7amo)\n么 [کەناڵی وتە ⚡️](https://t.me/xv7amo)\n╰──── • ◈ • ────╯\n⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼"
                 ),
-                url="https://t.me/H_8HC",
+                url="https://t.me/MGIMT",
                 description=" SOURCE",
-                thumb_url="https://telegra.ph/file/d7612edc7380f0b69b350.jpg",
+                thumb_url="https://telegra.ph/file/02293319c1eca481884f2.jpg",
                 reply_markup=reply_markup
             ),
         ],
