@@ -12,3 +12,4 @@ asyncio
 python-string-utils
 SpeechRecognition
 pytz
+yt_dlp
