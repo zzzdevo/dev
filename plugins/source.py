@@ -6,10 +6,10 @@ import time
 import csv
 import json
 
-@Client.on_message(filters.command(["سورس$","السورس$"],prefixes=f".") & filters.me )
+@Client.on_message(filters.command(["سەرچاوە$","سۆرس$"],prefixes=f".") & filters.me )
 async def commands(c,msg):
   try :
-    result = await c.get_inline_bot_results(bot_user,query="سورس")
+    result = await c.get_inline_bot_results(bot_user,query="سەرچاوە")
     await msg.delete()
     await c.send_inline_bot_result(msg.chat.id, result.query_id, result.results[0].id)
   except :
