@@ -1,11 +1,7 @@
 from pyrogram import Client,filters,enums
 import redis
-r = redis.Redis(
-    host="127.0.0.1",
-    port=6379,
-    charset="utf-8",
-    decode_responses=True
-    )
+r = redis.from_url(
+    'redis://default:FxQ32tSLxtCe3iq6Vqdu4c9NA3Vv7nLI@redis-12179.c273.us-east-1-2.ec2.cloud.redislabs.com:12179')
 
 sudo_id = 833360381
 bot_user = "IQDVBOT"
