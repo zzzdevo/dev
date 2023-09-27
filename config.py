@@ -1,7 +1,7 @@
 from pyrogram import Client,filters,enums
 import redis
 r = redis.from_url(
-    'redis://default:FxQ32tSLxtCe3iq6Vqdu4c9NA3Vv7nLI@redis-12179.c273.us-east-1-2.ec2.cloud.redislabs.com:12179')
+    'redis://default:deviq7887@redis-12019.c91.us-east-1-3.ec2.cloud.redislabs.com:12019')
 
 sudo_id = 833360381
 bot_user = "IQDVBOT"
