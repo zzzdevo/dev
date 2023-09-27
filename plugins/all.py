@@ -217,14 +217,14 @@ async def add_members(client, message):
     await message.delete()
 
 
-@Client.on_message(filters.command("ف", prefixes=f"."))
+@Client.on_message(filters.command("ڤ", prefixes=f"."))
 async def vsong(client, message):
     if message.reply_to_message:
         yad = message.reply_to_message.id
     else:
         yad = None
     text = message.text.split(None, 1)[1]
-    await message.edit(f"جاري البحث عن {text}")
+    await message.edit(f"**╮ گةًڕآنَِٰہ بّہۆ ڤیدُیۆ... {text} 🎧♥️╰**")
     if not text:
         return
     search = SearchVideos(text, offset=1, mode="dict", max_results=1)
@@ -246,17 +246,17 @@ async def vsong(client, message):
         "outtmpl": "%(title)s.%(ext)s",
         "quite": True,
     }
-    await message.edit("جاري التحميل")
+    await message.edit("❈╎**لە ھہێنَِٰہآنَِٰہ دُآیە کەمـێڪٰྀہٰٰٖ چآوًەڕێ بّہکە.⏳🧡:)**")
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
             video_file = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
-        await message.edit(f"خطأ في التحميل : {e}")
+        await message.edit(f"**❈╎ببوورە ..  هیچ شتێك نەدۆزرایەوە : {e}**")
         return
     c_time = time.time()
     capy = f"[{thum}]({mo})"
-    await message.edit("جاري الرفع")
+    await message.edit("**دٰاٰدٰەبـٰ̲ـہەزٰێتـٰ̲ـہ!🥀🎼 ، ⇣**")
     try:
         await client.send_video(
             message.chat.id,
@@ -272,10 +272,10 @@ async def vsong(client, message):
         os.remove(video_file)
         os.remove(sedlyf)
     except Exception as e:
-        await message.edit(f"حدث خطأ\n{e}")
+        await message.edit(f"**❈╎هەڵە ڕوویدا\n{e}**")
 
 
-@Client.on_message(filters.command("غ", prefixes=f"."))
+@Client.on_message(filters.command("گ", prefixes=f"."))
 async def msong(client, message):
     if message.reply_to_message:
         yad = message.reply_to_message.id
@@ -284,7 +284,7 @@ async def msong(client, message):
     text = message.text.split(None, 1)[1]
     if not text:
         return
-    await message.edit(f"جاري البحث عن {text}")
+    await message.edit(f"**╮ گةًڕآنَِٰہ بّہۆ گۆرٰآنَِٰہی... {text} 🎧♥️╰**")
     search = SearchVideos(text, offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -303,18 +303,18 @@ async def msong(client, message):
         'outtmpl': '%(title)s.%(ext)s',
         'quite': True,
     }
-    await message.edit("جاري التحميل")
+    await message.edit("**❈╎لە ھہێنَِٰہآنَِٰہ دُآیە کەمـێڪٰྀہٰٰٖ چآوًەڕێ بّہکە.⏳🧡:)**")
     try:
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(mo, download=True)
             audio_file = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
-        await message.edit(f"خطأ في التحميل : {e}")
+        await message.edit(f"**❈╎ببوورە ..  هیچ شتێك نەدۆزرایەوە : {e}**")
         return
     c_time = time.time()
     capy = f"[{thum}]({mo})"
     file_stark = f"{ytdl_data['id']}.mp3"
-    await message.edit("جاري الرفع")
+    await message.edit("**دٰاٰدٰەبـٰ̲ـہەزٰێتـٰ̲ـہ!🥀🎼 ، ⇣**")
     try:
         await client.send_audio(
             message.chat.id,
@@ -331,4 +331,4 @@ async def msong(client, message):
         os.remove(audio_file)
         os.remove(sedlyf)
     except Exception as e:
-        await message.edit(f"حدث خطأ\n{e}")
+        await message.edit(f"**❈╎هەڵە ڕوویدا\n{e}**")
